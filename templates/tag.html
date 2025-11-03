@@ -1,0 +1,17 @@
+{{ define "content" }}
+<section class="tag-page">
+  <h2>태그: {{ .Tag.Name }}</h2>
+  <p class="meta">{{ len .Posts }}개의 글이 있습니다.</p>
+  <ul class="tag-posts">
+    {{ range .Posts }}
+    <li>
+      <span class="post-date">{{ formatDate .Date }}</span>
+      <a href="/{{ .Slug }}/">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>이 태그에 해당하는 글이 없습니다.</li>
+    {{ end }}
+  </ul>
+  <p class="back-link"><a href="/tags/">← 전체 태그 보기</a></p>
+</section>
+{{ end }}

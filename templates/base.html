@@ -1,0 +1,32 @@
+{{ define "base" -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}</title>
+{{ if .Description }}<meta name="description" content="{{ .Description }}">{{ end }}
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <h1><a href="/">썸고 블로그</a></h1>
+    <p class="tagline">DevOps 엔지니어 썸고(thumbgo)의 블로그</p>
+    <nav class="nav">
+      <a href="/">홈</a>
+      <a href="/tags/">태그</a>
+      <a href="https://github.com/yoonhyunwoo" rel="noopener">Github</a>
+      <a href="/feeds/rss.xml">rss</a>
+    </nav>
+  </header>
+  <main class="content">
+    {{ template "content" . }}
+  </main>
+  <footer class="footer">
+    <p class="footer-meta">© thumbgo </p>
+  </footer>
+</div>
+</body>
+</html>
+{{- end }}

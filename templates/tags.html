@@ -1,0 +1,13 @@
+{{ define "content" }}
+<section class="tag-index">
+  <h2>태그 모음</h2>
+  <p class="meta">관심 있는 주제로 글을 찾아보세요.</p>
+  <ul class="tag-list">
+    {{ range .Tags }}
+    <li><a href="/tags/{{ .Slug }}/">{{ .Name }}</a> <span class="count">({{ len .Posts }})</span></li>
+    {{ else }}
+    <li>아직 태그가 없습니다.</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "content" }}
+<section class="post-list">
+  {{ range .Posts }}
+  <article>
+    <h2><a href="/{{ .Slug }}/">{{ .Title }}</a></h2>
+    <p class="meta"><span class="meta-date">{{ formatDate .Date }}</span>{{ if .Summary }} — {{ .Summary }}{{ end }}</p>
+    {{ if .Tags }}
+    <p class="meta-tags">태그:
+      {{ range $i, $t := .Tags }}{{ if $i }}, {{ end }}<a href="{{ tagURL $t }}">{{ $t }}</a>{{ end }}
+    </p>
+    {{ end }}
+  </article>
+  {{ else }}
+  <p>아직 게시물이 없습니다. 오늘 한 일을 적어보세요.</p>
+  {{ end }}
+</section>
+{{ end }}
