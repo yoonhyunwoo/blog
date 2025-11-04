@@ -294,7 +294,7 @@ func renderIndex(outDir string, tpl *template.Template, posts []post) error {
 	}
 	defer fh.Close()
 	data := map[string]any{
-		"Title": "썸고 운영 기록",
+		"Title": "썸고 블로그",
 		"Posts": posts,
 	}
 	if err := tpl.ExecuteTemplate(fh, "base", data); err != nil {
