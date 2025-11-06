@@ -1,5 +1,5 @@
 ---
-title: "Linux Kernel의 네트워크 스택의 수신 과정과 튜닝 효과"
+title: "Linux Kernel 네트워크 스택의 수신 과정(RX)과 튜닝 효과"
 date: 2025-11-04T15:19:00Z
 tags:
   - network
